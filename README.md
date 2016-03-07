@@ -1,8 +1,6 @@
 # ShootingGame
 
->Shooting game in first person and three dimension graphic. Run on the graphics engine Unity3D.
->The main models are created throught Blender and the secondary object are open source models.
->Score visualizator and ranking
+>First person shooting game in 3D. Run on the game engine Unity3D.
 
 * *List of 3d models:*
   * [Magnum 460](https://github.com/TheGoodFella/magnum460Blend)
