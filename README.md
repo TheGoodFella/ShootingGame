@@ -1,4 +1,4 @@
-# ShootingGame
+# Shooting Game
 
 #####First person shooter game in 3D. Run on the game engine Unity3D.
 
