@@ -5,4 +5,6 @@
 * *List of my 3d models used in the game:*
   * [Magnum 460](https://github.com/TheGoodFella/magnum460Blend)
   
+[School essay link](http://tesine.marconirovereto.it/dettagli.html?2016.5BI.9)
+
 >enjoy
