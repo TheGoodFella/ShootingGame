@@ -95,7 +95,7 @@ public class gunMover : MonoBehaviour {
                 //transform.position = new Vector3(transform.position.x + moveForward,
                 //transform.position.y, transform.position.z + moveBackward);
                 ///if W is not pressed, stop the force applied to the gun
-                /////the y is set to 0 otherwise the gun takes the fly...
+                /////the y is set to 0 otherwise the gun takes the fly... 
                 rb.AddForce(v3.x * speed, 0.0f, v3.z * speed);
 
                 //max velocity ifs , if the velocity is faster than maxspeed (if moving forward) or -maxspeed (if moving backward) set the velocity to maxspeed if already positive (moving forward) or to -maxspeed if already negative (moving backward)
