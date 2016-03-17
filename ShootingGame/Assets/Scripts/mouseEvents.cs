@@ -12,7 +12,7 @@ public class mouseEvents : MonoBehaviour {
         {
             Debug.Log("Pressed mouse button left - 0");
 
-            if (!fireParticles.isPlaying)
+            if (!fireParticles.isPlaying && !PauseGame.gamePaused)
                 fireParticles.Play();
         }
 

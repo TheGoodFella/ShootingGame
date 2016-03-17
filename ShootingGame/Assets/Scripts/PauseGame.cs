@@ -4,9 +4,12 @@ using System.Collections;
 public class PauseGame : MonoBehaviour {
 
     /// <summary>
-    /// check if the cursor was locked or unlocked when we press esc
+    /// check if pause the game and..
+    /// ...check if the cursor was locked or unlocked when we press esc
     /// </summary>
-    private bool isCursorLocked;
+    private bool isGamePaused;
+
+    public static bool gamePaused;
 
 	// Use this for initialization
     void Start()
@@ -20,10 +23,14 @@ public class PauseGame : MonoBehaviour {
         //if we press esc the cursor will unlock from the center of game window and it became visible if it wasn't, otherwise it again becomes locked and hidden
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isCursorLocked)
+            if (isGamePaused)
+            {
                 SetCursorState(false);
+            }
             else
+            {
                 SetCursorState(true);
+            }
         }
 	}
 
@@ -37,13 +44,15 @@ public class PauseGame : MonoBehaviour {
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            isCursorLocked = true;
+            isGamePaused = true;
+            gamePaused = false;
         }
         else  //unlock and show cursor
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            isCursorLocked = false;
+            isGamePaused = false;
+            gamePaused = true;
         }
     }
 }
