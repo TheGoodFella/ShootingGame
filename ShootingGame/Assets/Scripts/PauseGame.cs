@@ -11,9 +11,13 @@ public class PauseGame : MonoBehaviour {
 
     public static bool gamePaused;
 
+    public GameObject canvasPause;
+
 	// Use this for initialization
     void Start()
     {
+        canvasPause.SetActive(gamePaused);
+
         //on start lock the cursor to the center of the game window and hide it
         SetCursorState(true);
     }
@@ -31,6 +35,7 @@ public class PauseGame : MonoBehaviour {
             {
                 SetCursorState(true);
             }
+            canvasPause.SetActive(gamePaused);
         }
 	}
 
