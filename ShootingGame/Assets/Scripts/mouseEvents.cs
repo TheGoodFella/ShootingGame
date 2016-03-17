@@ -4,6 +4,7 @@ using System.Collections;
 public class mouseEvents : MonoBehaviour {
 
     public ParticleSystem fireParticles;
+    public GameObject gunshotAudio;
 
 	// Update is called once per frame
 	void Update ()
@@ -12,8 +13,12 @@ public class mouseEvents : MonoBehaviour {
         {
             Debug.Log("Pressed mouse button left - 0");
 
-            if (!fireParticles.isPlaying && !PauseGame.gamePaused)
+            if (!fireParticles.isPlaying && !PauseGame.gamePaused)  //FIRE!!
+            {
+                Debug.Log("FIRE");
                 fireParticles.Play();
+                gunshotAudio.GetComponent<AudioSource>().Play();
+            }
         }
 
         if (Input.GetMouseButtonDown(1))  //right mouse btn
