@@ -46,7 +46,7 @@ public class gunMover : MonoBehaviour {
             rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
             rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
 
-            transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+            transform.localEulerAngles = new Vector3(0, rotationX, rotationY);
         }
         else if (axes == RotationAxes.MouseX)
         {
