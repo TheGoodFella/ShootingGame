@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
-
+using System.Threading;
 public class mouseEvents : MonoBehaviour {
 
     public ParticleSystem fireParticles;
@@ -18,6 +17,7 @@ public class mouseEvents : MonoBehaviour {
             {
                 Debug.Log("FIRE");
                 gun.GetComponent<Animation>().Play();
+                Thread.Sleep(40);
                 fireParticles.Play();
                 gunshotAudio.GetComponent<AudioSource>().Play();
                 
@@ -33,5 +33,10 @@ public class mouseEvents : MonoBehaviour {
         {
             Debug.Log("Pressed mouse button middle - 2");
         }
+    }
+
+    void WaitForAnimation(Animation animation)
+    {
+
     }
 }
