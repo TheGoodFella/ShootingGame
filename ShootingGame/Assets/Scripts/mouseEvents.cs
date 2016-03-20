@@ -5,6 +5,7 @@ public class mouseEvents : MonoBehaviour {
 
     public ParticleSystem fireParticles;
     public GameObject gunshotAudio;
+    public GameObject gun;
 
 	// Update is called once per frame
 	void Update ()
@@ -16,8 +17,10 @@ public class mouseEvents : MonoBehaviour {
             if (!fireParticles.isPlaying && !PauseGame.gamePaused)  //FIRE!!
             {
                 Debug.Log("FIRE");
+                gun.GetComponent<Animation>().Play();
                 fireParticles.Play();
                 gunshotAudio.GetComponent<AudioSource>().Play();
+                
             }
         }
 
