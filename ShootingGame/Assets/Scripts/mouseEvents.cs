@@ -19,10 +19,16 @@ public class mouseEvents : MonoBehaviour {
 
     public GameObject ammo;
 
-    public int bullets = 5;
+    public GameObject reload;
+
+    private int bullets;
+
+    public int NAmmo = 5;
 
     void Start()
     {
+        reload.SetActive(false);
+        bullets = NAmmo;
         setBulletsText();
     }
 
@@ -35,22 +41,25 @@ public class mouseEvents : MonoBehaviour {
 
             if (!fireParticles.isPlaying && !PauseGame.gamePaused)  //FIRE!!
             {
-                if (bullets == 0)
+                
+                if (bullets <= 0)
                 {
                     //RELOAD
+                    reload.SetActive(true);
                 }
                 else
+                {
                     bullets--;
+                    setBulletsText();
 
-                setBulletsText();
-
-                Debug.Log("FIRE");
-                trigger.GetComponent<Animation>().Play();
-                Thread.Sleep(8);
-                gun.GetComponent<Animation>().Play();
-                Thread.Sleep(40);
-                fireParticles.Play();
-                gunshotAudio.GetComponent<AudioSource>().Play();
+                    Debug.Log("FIRE");
+                    trigger.GetComponent<Animation>().Play();
+                    Thread.Sleep(8);
+                    gun.GetComponent<Animation>().Play();
+                    Thread.Sleep(40);
+                    fireParticles.Play();
+                    gunshotAudio.GetComponent<AudioSource>().Play();
+                }
                 
             }
         }
@@ -63,6 +72,12 @@ public class mouseEvents : MonoBehaviour {
         if (Input.GetMouseButtonDown(2))  //middle mouse btn
         {
             Debug.Log("Pressed mouse button middle - 2");
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            reload.SetActive(false);
+            bullets = NAmmo;
+            setBulletsText();
         }
     }
 
