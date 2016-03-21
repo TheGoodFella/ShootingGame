@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Threading;
+using UnityEngine.UI;
+
 public class mouseEvents : MonoBehaviour {
 
     public ParticleSystem fireParticles;
@@ -15,6 +17,15 @@ public class mouseEvents : MonoBehaviour {
     /// </summary>
     public GameObject trigger;
 
+    public GameObject rounds;
+
+    public int bullets = 5;
+
+    void Start()
+    {
+        setBulletsText();
+    }
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -24,8 +35,18 @@ public class mouseEvents : MonoBehaviour {
 
             if (!fireParticles.isPlaying && !PauseGame.gamePaused)  //FIRE!!
             {
+                if (bullets == 0)
+                {
+                    //RELOAD
+                }
+                else
+                    bullets--;
+
+                setBulletsText();
+
                 Debug.Log("FIRE");
                 trigger.GetComponent<Animation>().Play();
+                Thread.Sleep(8);
                 gun.GetComponent<Animation>().Play();
                 Thread.Sleep(40);
                 fireParticles.Play();
@@ -45,8 +66,8 @@ public class mouseEvents : MonoBehaviour {
         }
     }
 
-    void WaitForAnimation(Animation animation)
+    void setBulletsText()
     {
-
+        
     }
 }
