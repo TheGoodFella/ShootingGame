@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Threading;
 using UnityEngine.UI;
+using System.Collections;
 
 public class mouseEvents : MonoBehaviour {
 
@@ -20,15 +21,19 @@ public class mouseEvents : MonoBehaviour {
     /// </summary>
     public GameObject trigger;
 
+    //text objects:
     /// <summary>
     /// current ammo text
     /// </summary>
     public GameObject ammoTXT;
-
     /// <summary>
     /// reload text
     /// </summary>
     public GameObject reloadTXT;
+    /// <summary>
+    /// blinking reloading text
+    /// </summary>
+    public GameObject reloadingTXT;
 
     /// <summary>
     /// current available bullets
@@ -43,13 +48,20 @@ public class mouseEvents : MonoBehaviour {
     //instead of write always reloadAudio.GetComponent<AudioSource>().Play(); I save it then I just call reloadAudioSource.Play();
     private AudioSource reloadAudioSource;
     private AudioSource gunshotAudioSource;
+    
 
     void Start()
     {
         reloadAudioSource = reloadAudio.GetComponent<AudioSource>();
         gunshotAudioSource = gunshotAudio.GetComponent<AudioSource>();
-        
+
+        //inizialize the reloading text to hide
+        reloadingTXT.SetActive(false);
+
+        //inizialize the reload alert text to hide
         reloadTXT.SetActive(false);
+
+        //set the bullets = to max ammo per reload. Having ammo that store the max ammo available per reload allows me to reset bullets when they're finished
         bullets = NAmmo;
         setBulletsText();
     }
@@ -63,43 +75,37 @@ public class mouseEvents : MonoBehaviour {
 
             if (!fireParticles.isPlaying && !PauseGame.gamePaused)  //FIRE!!
             {
-                
+
                 if (bullets <= 0)
                 {
                     //NEED TO RELOAD
                     reloadTXT.SetActive(true);
                 }
-                else
+                else if (!reloadAudioSource.isPlaying)  //if the reload sound is playing the gun is reloading and it mustn't fire 
                 {
                     bullets--;
                     setBulletsText();
 
                     Debug.Log("FIRE");
                     trigger.GetComponent<Animation>().Play();
-                    Thread.Sleep(8);
+
+                    //wait 8 ms
+
                     gun.GetComponent<Animation>().Play();
-                    Thread.Sleep(40);
+
+                    //wait 40 ms
+
                     fireParticles.Play();
                     gunshotAudioSource.Play();
                 }
-                
+
             }
         }
 
-        if (Input.GetMouseButtonDown(1))  //right mouse btn
-        {
-            Debug.Log("Pressed mouse button right - 1");
-        }
-
-        if (Input.GetMouseButtonDown(2))  //middle mouse btn
-        {
-            Debug.Log("Pressed mouse button middle - 2");
-        }
         if (Input.GetKeyDown(KeyCode.R))  //RELOAD
         {
             //RELOADING
             reloadAudioSource.Play();
-            
 
             reloadTXT.SetActive(false);
             bullets = NAmmo;
