@@ -40,8 +40,15 @@ public class mouseEvents : MonoBehaviour {
     /// </summary>
     public int NAmmo = 5;
 
+    //instead of write always reloadAudio.GetComponent<AudioSource>().Play(); I save it then I just call reloadAudioSource.Play();
+    private AudioSource reloadAudioSource;
+    private AudioSource gunshotAudioSource;
+
     void Start()
     {
+        reloadAudioSource = reloadAudio.GetComponent<AudioSource>();
+        gunshotAudioSource = gunshotAudio.GetComponent<AudioSource>();
+        
         reloadTXT.SetActive(false);
         bullets = NAmmo;
         setBulletsText();
@@ -73,7 +80,7 @@ public class mouseEvents : MonoBehaviour {
                     gun.GetComponent<Animation>().Play();
                     Thread.Sleep(40);
                     fireParticles.Play();
-                    gunshotAudio.GetComponent<AudioSource>().Play();
+                    gunshotAudioSource.Play();
                 }
                 
             }
@@ -91,7 +98,9 @@ public class mouseEvents : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.R))  //RELOAD
         {
             //RELOADING
-            reloadAudio.GetComponent<AudioSource>().Play();
+            reloadAudioSource.Play();
+            
+
             reloadTXT.SetActive(false);
             bullets = NAmmo;
             setBulletsText();
