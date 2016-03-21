@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public class mouseEvents : MonoBehaviour {
 
     public ParticleSystem fireParticles;
+    
+    //audios
+    public GameObject reloadAudio;
     public GameObject gunshotAudio;
 
     /// <summary>
@@ -17,17 +20,29 @@ public class mouseEvents : MonoBehaviour {
     /// </summary>
     public GameObject trigger;
 
-    public GameObject ammo;
+    /// <summary>
+    /// current ammo text
+    /// </summary>
+    public GameObject ammoTXT;
 
-    public GameObject reload;
+    /// <summary>
+    /// reload text
+    /// </summary>
+    public GameObject reloadTXT;
 
+    /// <summary>
+    /// current available bullets
+    /// </summary>
     private int bullets;
 
+    /// <summary>
+    /// max ammo per reload
+    /// </summary>
     public int NAmmo = 5;
 
     void Start()
     {
-        reload.SetActive(false);
+        reloadTXT.SetActive(false);
         bullets = NAmmo;
         setBulletsText();
     }
@@ -44,8 +59,8 @@ public class mouseEvents : MonoBehaviour {
                 
                 if (bullets <= 0)
                 {
-                    //RELOAD
-                    reload.SetActive(true);
+                    //NEED TO RELOAD
+                    reloadTXT.SetActive(true);
                 }
                 else
                 {
@@ -73,9 +88,11 @@ public class mouseEvents : MonoBehaviour {
         {
             Debug.Log("Pressed mouse button middle - 2");
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))  //RELOAD
         {
-            reload.SetActive(false);
+            //RELOADING
+            reloadAudio.GetComponent<AudioSource>().Play();
+            reloadTXT.SetActive(false);
             bullets = NAmmo;
             setBulletsText();
         }
@@ -83,6 +100,6 @@ public class mouseEvents : MonoBehaviour {
 
     void setBulletsText()
     {
-        ammo.GetComponent<TextMesh>().text = bullets+ " ammo";
+        ammoTXT.GetComponent<TextMesh>().text = bullets+ " ammo";
     }
 }
