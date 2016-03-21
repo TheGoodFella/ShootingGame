@@ -17,7 +17,7 @@ public class mouseEvents : MonoBehaviour {
     /// </summary>
     public GameObject trigger;
 
-    public GameObject rounds;
+    public GameObject ammo;
 
     public int bullets = 5;
 
@@ -68,6 +68,6 @@ public class mouseEvents : MonoBehaviour {
 
     void setBulletsText()
     {
-        rounds.GetComponent<TextMesh>().text = bullets+ " ammo";
+        ammo.GetComponent<TextMesh>().text = bullets+ " ammo";
     }
 }
