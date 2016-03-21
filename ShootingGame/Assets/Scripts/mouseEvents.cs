@@ -68,6 +68,6 @@ public class mouseEvents : MonoBehaviour {
 
     void setBulletsText()
     {
-        
+        rounds.GetComponent<TextMesh>().text = bullets+ " ammo";
     }
 }
