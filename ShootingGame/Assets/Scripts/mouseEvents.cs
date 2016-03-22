@@ -20,15 +20,19 @@ public class mouseEvents : MonoBehaviour {
     /// </summary>
     public GameObject trigger;
 
+    //TXTs:
     /// <summary>
     /// current ammo text
     /// </summary>
     public GameObject ammoTXT;
-
     /// <summary>
     /// reload text
     /// </summary>
     public GameObject reloadTXT;
+    /// <summary>
+    /// reloading text
+    /// </summary>
+    public GameObject reloadingTXT;
 
     /// <summary>
     /// current available bullets
@@ -48,7 +52,8 @@ public class mouseEvents : MonoBehaviour {
     {
         reloadAudioSource = reloadAudio.GetComponent<AudioSource>();
         gunshotAudioSource = gunshotAudio.GetComponent<AudioSource>();
-        
+
+        reloadingTXT.SetActive(false);
         reloadTXT.SetActive(false);
         bullets = NAmmo;
         setBulletsText();
@@ -69,8 +74,11 @@ public class mouseEvents : MonoBehaviour {
                     //NEED TO RELOAD
                     reloadTXT.SetActive(true);
                 }
-                else
+                else if(!reloadAudioSource.isPlaying)  //if the reload sound is playing the gun is reloading and it mustn't fire
                 {
+                    if (reloadingTXT.active)
+                        reloadingTXT.SetActive(false);
+
                     bullets--;
                     setBulletsText();
 
@@ -85,18 +93,10 @@ public class mouseEvents : MonoBehaviour {
                 
             }
         }
-
-        if (Input.GetMouseButtonDown(1))  //right mouse btn
-        {
-            Debug.Log("Pressed mouse button right - 1");
-        }
-
-        if (Input.GetMouseButtonDown(2))  //middle mouse btn
-        {
-            Debug.Log("Pressed mouse button middle - 2");
-        }
         if (Input.GetKeyDown(KeyCode.R))  //RELOAD
         {
+            reloadingTXT.SetActive(true);
+
             //RELOADING
             reloadAudioSource.Play();
             
