@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Threading;
-using UnityEngine.UI;
 
 public class mouseEvents : MonoBehaviour {
 
@@ -62,6 +61,9 @@ public class mouseEvents : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (!reloadAudioSource.isPlaying)
+            reloadingTXT.SetActive(false);
+
         if (Input.GetMouseButtonDown(0))  //left mouse btn
         {
             Debug.Log("Pressed mouse button left - 0");
@@ -76,9 +78,6 @@ public class mouseEvents : MonoBehaviour {
                 }
                 else if(!reloadAudioSource.isPlaying)  //if the reload sound is playing the gun is reloading and it mustn't fire
                 {
-                    if (reloadingTXT.active)
-                        reloadingTXT.SetActive(false);
-
                     bullets--;
                     setBulletsText();
 
