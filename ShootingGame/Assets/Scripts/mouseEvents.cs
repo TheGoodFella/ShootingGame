@@ -40,6 +40,8 @@ public class mouseEvents : MonoBehaviour {
     /// </summary>
     private int bullets;
 
+    public Camera cam;
+
     /// <summary>
     /// max ammo per reload
     /// </summary>
@@ -78,10 +80,13 @@ public class mouseEvents : MonoBehaviour {
                     //NEED TO RELOAD
                     reloadTXT.SetActive(true);
                 }
-                else if(!reloadAudioSource.isPlaying)  //if the reload sound is playing the gun is reloading and it mustn't fire
+                else if(!reloadAudioSource.isPlaying)  //fine only when the sound of reloading is not playing
                 {
 
-                    bullet.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 10, ForceMode.Impulse);
+                    Debug.Log("gun V3: "+hammer.transform.parent.position.ToString());
+
+                    Vector3 gunV3 = hammer.transform.parent.position;
+                    bullet.GetComponent<Rigidbody>().AddForce(cam.GetComponent<Transform>().position*10);
 
                     bullets--;
                     setBulletsText();
