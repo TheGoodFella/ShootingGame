@@ -38,7 +38,9 @@ public class mouseEvents : MonoBehaviour {
     /// </summary>
     public GameObject bulletPrefab;
 
-    public GameObject bulletEmitter;
+    public GameObject bullet_emitter;
+
+    public float bulletSpeed = 500;
 
     /// <summary>
     /// current available bullets
@@ -87,9 +89,12 @@ public class mouseEvents : MonoBehaviour {
 
                     Debug.Log("gun V3: "+hammer.transform.parent.position.ToString());
 
-                    GameObject bullet = (GameObject)Instantiate(bulletPrefab, bulletEmitter.transform.position, transform.rotation);
+                    GameObject bulletTemp = Instantiate(bulletPrefab, new Vector3(bullet_emitter.transform.position.x, bullet_emitter.transform.position.y, bullet_emitter.transform.position.z), bullet_emitter.transform.rotation) as GameObject;
 
-                    bullet.GetComponent<Rigidbody>().AddRelativeForce(bulletEmitter.transform.forward * 1000);
+                    bulletTemp.transform.Rotate(Vector3.right);
+
+                    //bulletTemp.GetComponent<Rigidbody>().velocity = bullet_emitter.transform.forward * bulletSpeed; ;
+
 
                     bullets--;
                     setBulletsText();
