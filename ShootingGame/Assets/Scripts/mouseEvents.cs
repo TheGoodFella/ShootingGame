@@ -33,15 +33,17 @@ public class mouseEvents : MonoBehaviour {
     /// </summary>
     public GameObject reloadingTXT;
 
-    public GameObject bullet;
+    /// <summary>
+    /// the prefab GameObject of the bullet, used to instantiate the bullet at runtime
+    /// </summary>
+    public GameObject bulletPrefab;
+
+    public GameObject bulletEmitter;
 
     /// <summary>
     /// current available bullets
     /// </summary>
     private int bullets;
-
-    public Camera cam;
-
     /// <summary>
     /// max ammo per reload
     /// </summary>
@@ -85,8 +87,9 @@ public class mouseEvents : MonoBehaviour {
 
                     Debug.Log("gun V3: "+hammer.transform.parent.position.ToString());
 
-                    Vector3 gunV3 = hammer.transform.parent.position;
-                    bullet.GetComponent<Rigidbody>().AddForce(cam.GetComponent<Transform>().position*10);
+                    GameObject bullet = (GameObject)Instantiate(bulletPrefab, bulletEmitter.transform.position, transform.rotation);
+
+                    bullet.GetComponent<Rigidbody>().AddRelativeForce(bulletEmitter.transform.forward * 1000);
 
                     bullets--;
                     setBulletsText();
