@@ -12,7 +12,7 @@ public class mouseEvents : MonoBehaviour {
     /// <summary>
     /// hammer
     /// </summary>
-    public GameObject gun;
+    public GameObject hammer;
 
     /// <summary>
     /// trigger
@@ -32,6 +32,8 @@ public class mouseEvents : MonoBehaviour {
     /// reloading text
     /// </summary>
     public GameObject reloadingTXT;
+
+    public GameObject bullet;
 
     /// <summary>
     /// current available bullets
@@ -78,13 +80,16 @@ public class mouseEvents : MonoBehaviour {
                 }
                 else if(!reloadAudioSource.isPlaying)  //if the reload sound is playing the gun is reloading and it mustn't fire
                 {
+
+                    bullet.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 10, ForceMode.Impulse);
+
                     bullets--;
                     setBulletsText();
 
                     Debug.Log("FIRE");
                     trigger.GetComponent<Animation>().Play();
                     Thread.Sleep(8);
-                    gun.GetComponent<Animation>().Play();
+                    hammer.GetComponent<Animation>().Play();
                     Thread.Sleep(40);
                     fireParticles.Play();
                     gunshotAudioSource.Play();
