@@ -39,6 +39,7 @@ public class mouseEvents : MonoBehaviour {
     public GameObject bulletPrefab;
 
     public GameObject bullet_emitter;
+    
 
     public float bulletSpeed = 500;
 
@@ -89,11 +90,14 @@ public class mouseEvents : MonoBehaviour {
 
                     Debug.Log("gun V3: "+hammer.transform.parent.position.ToString());
 
-                    GameObject bulletTemp = Instantiate(bulletPrefab, new Vector3(bullet_emitter.transform.position.x, bullet_emitter.transform.position.y, bullet_emitter.transform.position.z), bullet_emitter.transform.rotation) as GameObject;
+                    GameObject bulletTemp = Instantiate(bulletPrefab, bullet_emitter.transform.position, bullet_emitter.transform.rotation) as GameObject;
+                    Physics.IgnoreCollision(bulletTemp.GetComponent<Collider>(), bullet_emitter.GetComponent<Collider>());
+                    //(bulletTemp.GetComponent<Transform>().position, 90);
+                    //bulletTemp.transform.Rotate(Vector3.right);
 
-                    bulletTemp.transform.Rotate(Vector3.right);
+                    bulletTemp.GetComponent<Rigidbody>().AddForce(bullet_emitter.GetComponent<Transform>().forward* bulletSpeed);
 
-                    //bulletTemp.GetComponent<Rigidbody>().velocity = bullet_emitter.transform.forward * bulletSpeed; ;
+                    
 
 
                     bullets--;
