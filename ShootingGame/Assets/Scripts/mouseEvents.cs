@@ -38,19 +38,30 @@ public class mouseEvents : MonoBehaviour {
     /// </summary>
     public GameObject bulletPrefab;
 
-    public GameObject bullet_emitter;
-    
-
-    public float bulletSpeed = 500;
+    /// <summary>
+    /// bullet emitter (a cube in front of the gun)
+    /// </summary>
+    public GameObject bulletEmitter;
 
     /// <summary>
-    /// current available bullets
+    /// bullet speed multiplier
     /// </summary>
-    private int bullets;
+    public float bulletSpeed = 500;
+
+
+    /// <summary>
+    /// how many seconds the bullet must stay alive? MAYBE SHOULD I REPLACE IT WITH A TRIGGER EVENT AT THE BORDER OF THE GAME MAP
+    /// </summary>
+    public float destroyDelaySeconds = 10f;
+
     /// <summary>
     /// max ammo per reload
     /// </summary>
     public int NAmmo = 5;
+    /// <summary>
+    /// current available bullets
+    /// </summary>
+    private int bullets;
 
     //instead of write always reloadAudio.GetComponent<AudioSource>().Play(); I save it then I just call reloadAudioSource.Play();
     private AudioSource reloadAudioSource;
@@ -87,20 +98,20 @@ public class mouseEvents : MonoBehaviour {
                 }
                 else if(!reloadAudioSource.isPlaying)  //fine only when the sound of reloading is not playing
                 {
+                    //instantiate a new bullet from the bullet prefab
+                    GameObject bulletTemp = Instantiate(bulletPrefab, bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
 
-                    Debug.Log("gun V3: "+hammer.transform.parent.position.ToString());
-
-                    GameObject bulletTemp = Instantiate(bulletPrefab, bullet_emitter.transform.position, bullet_emitter.transform.rotation) as GameObject;
-                    Physics.IgnoreCollision(bulletTemp.GetComponent<Collider>(), bullet_emitter.GetComponent<Collider>());
-                    //(bulletTemp.GetComponent<Transform>().position, 90);
-                    //bulletTemp.transform.Rotate(Vector3.right);
-
-                    bulletTemp.GetComponent<Rigidbody>().AddForce(bullet_emitter.GetComponent<Transform>().forward* bulletSpeed);
-
+                    //ignore collisions between the gun, and the bullets, otherwise gun have a kind of recoil...
+                    Physics.IgnoreCollision(bulletTemp.GetComponent<Collider>(), bulletEmitter.GetComponent<Collider>());
                     
+                    //finally add force to the bullet (y)
+                    bulletTemp.GetComponent<Rigidbody>().AddForce(bulletEmitter.GetComponent<Transform>().forward* bulletSpeed);
 
+                    Destroy(bulletTemp, destroyDelaySeconds);
 
+                    //decrease available bullet
                     bullets--;
+
                     setBulletsText();
 
                     Debug.Log("FIRE");
@@ -116,18 +127,26 @@ public class mouseEvents : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.R))  //RELOAD
         {
+            //show "reloading" text
             reloadingTXT.SetActive(true);
 
             //RELOADING
             reloadAudioSource.Play();
             
-
+            //hide "reloading" text
             reloadTXT.SetActive(false);
+
+            //restore current bullet (bullets) to the max bullet (ammo)
             bullets = NAmmo;
+
+            
             setBulletsText();
         }
     }
 
+    /// <summary>
+    /// refresh current available bullet text
+    /// </summary>
     void setBulletsText()
     {
         ammoTXT.GetComponent<TextMesh>().text = bullets+ " ammo";
