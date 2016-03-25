@@ -19,7 +19,6 @@ public class gunMover : MonoBehaviour {
     public float minimumY = -60F;
     public float maximumY = 60F;
     private float rotationY = 0F;
-    private float offsetX;
 
     /// <summary>
     /// intensity of moving forward (W)
