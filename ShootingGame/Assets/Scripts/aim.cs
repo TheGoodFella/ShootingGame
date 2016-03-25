@@ -14,7 +14,9 @@ public class aim : MonoBehaviour {
         if (Input.GetKey(KeyCode.Mouse1))
         {
             if (!isAimed)
-                GetComponent<Animation>().Play();
+            {
+                GetComponent<Animation>().Play("mainCamera");
+            }
             isAimed = true;
         }
         else
@@ -22,7 +24,8 @@ public class aim : MonoBehaviour {
             if (isAimed)
             {
                 isAimed = false;
-                GetComponent<Animation>().Play();
+                GetComponent<Animation>().Play("mainCamera-rev");
+
             }
         }
     }
