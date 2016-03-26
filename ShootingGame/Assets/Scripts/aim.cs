@@ -12,8 +12,7 @@ public class aim : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKey(KeyCode.Mouse1))
-        {
-            
+        {            
             if (!isAimed) //if is not aimed yet, do it by playing the animation
                 GetComponent<Animation>().Play("mainCamera");
 
