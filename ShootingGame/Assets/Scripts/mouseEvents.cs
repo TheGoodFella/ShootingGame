@@ -138,7 +138,6 @@ public class mouseEvents : MonoBehaviour {
 
             //restore current bullet (bullets) to the max bullet (ammo)
             bullets = NAmmo;
-
             
             setBulletsText();
         }
