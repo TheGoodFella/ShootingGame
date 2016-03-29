@@ -87,6 +87,7 @@ public class mouseEvents : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))  //left mouse btn
         {
             Debug.Log("Pressed mouse button left - 0");
+            //Debug.Log("Time elapsed: " + Time.time + "seconds");
 
             if (!fireParticles.isPlaying && !PauseGame.gamePaused)  //FIRE!!
             {
