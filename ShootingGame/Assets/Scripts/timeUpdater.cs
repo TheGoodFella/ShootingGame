@@ -27,7 +27,7 @@ public class timeUpdater : MonoBehaviour
             if (!PauseGame.gamePaused)
             {
                 gameTime += interval;
-                GetComponent<TextMesh>().text = gameTime.ToString() + " " + time;
+                GetComponent<TextMesh>().text =string.Format(gameTime.ToString().Split('.')[0] + " " + time);
             }
             //always update next, otherwise when the game is paused the method not works
             next += interval;
