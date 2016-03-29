@@ -9,6 +9,10 @@ public class PauseGame : MonoBehaviour {
     /// </summary>
     private bool isGamePaused;
 
+
+    /// <summary>
+    /// is the game paused? [true:yes/false:no]
+    /// </summary>
     public static bool gamePaused;
 
     public GameObject canvasPause;
