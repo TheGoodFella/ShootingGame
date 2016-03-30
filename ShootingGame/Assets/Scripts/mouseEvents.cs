@@ -89,7 +89,7 @@ public class mouseEvents : MonoBehaviour {
             Debug.Log("Pressed mouse button left - 0");
             //Debug.Log("Time elapsed: " + Time.time + "seconds");
 
-            if (!fireParticles.isPlaying && !PauseGame.gamePaused)  //FIRE!!
+            if (!fireParticles.isPlaying && !PauseGame.gamePaused)  
             {
                 
                 if (bullets <= 0)
@@ -97,8 +97,9 @@ public class mouseEvents : MonoBehaviour {
                     //NEED TO RELOAD
                     reloadTXT.SetActive(true);
                 }
-                else if(!reloadAudioSource.isPlaying)  //fine only when the sound of reloading is not playing
+                else if(!reloadAudioSource.isPlaying) //FIRE  //fine only when the sound of reloading is not playing
                 {
+                    Time.timeScale = 0.3f;
                     //instantiate a new bullet from the bullet prefab
                     GameObject bulletTemp = Instantiate(bulletPrefab, bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
 
