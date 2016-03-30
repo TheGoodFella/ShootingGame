@@ -15,9 +15,23 @@ public class timeUpdater : MonoBehaviour
     /// </summary>
     public float next = 0.0f;
     /// <summary>
-    /// effective game time (seconds), not count when game is paused
+    /// effective game time (seconds), not count when game is paused, affected by eventual slow-mo
     /// </summary>
-    static private float gameTime = 0.0f;
+    static public float gameTime = 0.0f;
+
+    /// <summary>
+    /// the text to show the time
+    /// </summary>
+    public GameObject timeTXT;
+    /// <summary>
+    /// show also the score upper left the screen
+    /// </summary>
+    public GameObject scoreTXT;
+
+    void Start()
+    {
+        scoreTXT.GetComponent<TextMesh>().text = "0 pt";
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,7 +41,8 @@ public class timeUpdater : MonoBehaviour
             if (!PauseGame.gamePaused)
             {
                 gameTime += interval;
-                GetComponent<TextMesh>().text =string.Format(gameTime.ToString().Split('.')[0] + " " + time);
+                timeTXT.GetComponent<TextMesh>().text =string.Format(gameTime.ToString().Split('.')[0] + " " + time);
+                scoreTXT.GetComponent<TextMesh>().text = gm.player.Score + " pt";
             }
             //always update next, otherwise when the game is paused the method not works
             next += interval;

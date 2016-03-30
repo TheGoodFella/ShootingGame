@@ -99,7 +99,6 @@ public class mouseEvents : MonoBehaviour {
                 }
                 else if(!reloadAudioSource.isPlaying) //FIRE  //fine only when the sound of reloading is not playing
                 {
-                    Time.timeScale = 0.3f;
                     //instantiate a new bullet from the bullet prefab
                     GameObject bulletTemp = Instantiate(bulletPrefab, bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
 
