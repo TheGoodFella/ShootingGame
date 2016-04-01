@@ -2,7 +2,11 @@
 using System.Collections;
 
 public class colliderScore : MonoBehaviour {
-    
+
+    /// <summary>
+    /// add score when the target it's struck by the bullet
+    /// </summary>
+    /// <param name="col"></param>
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "bullet")
