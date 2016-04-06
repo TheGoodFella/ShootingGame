@@ -7,7 +7,7 @@ FONT:
 - [TRANSCENDS GAMES (Public Domain [not a license])](https://fontlibrary.org/en/font/transcends-games)
 
 Antialiasing SMAA:
-- [SMAA-Unity by Chman](https://github.com/Chman/SMAA-Unity) : [license](https://github.com/Chman/SMAA-Unity/blob/master/LICENSE.txt)
+- [SMAA-Unity by Chman](https://github.com/Chman/SMAA-Unity) : [license](https://github.com/Chman/SMAA-Unity/blob/master/LICENSE.txt) :
 ```
 Copyright (c) 2015 Thomas Hourdel
 

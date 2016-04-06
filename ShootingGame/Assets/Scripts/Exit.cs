@@ -10,20 +10,4 @@ public class Exit : MonoBehaviour
         Debug.Log("closing...");
         Application.Quit();
     }
-
-    /// <summary>
-    /// when cursor enter the text area
-    /// </summary>
-    public void OnEnter()
-    {
-        //Debug.Log("Mouse enter on exit");
-    }
-
-    /// <summary>
-    /// when cursor exit the text area
-    /// </summary>
-    public void OnExit()
-    {
-        //Debug.Log("Mouse leaving on exit");
-    }
 }
