@@ -1,23 +1,13 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.EventSystems;
 
 public class Exit : MonoBehaviour
 {
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
+    /// <summary>
+    /// when click on the text
+    /// </summary>
     public void OnClick()
     {
-        Debug.Log("Exit");
-    }
-
-    public void OnEnter()
-    {
-        Debug.Log("Exit mouse enter");
+        Debug.Log("closing...");
+        Application.Quit();
     }
 }
