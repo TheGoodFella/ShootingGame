@@ -5,6 +5,11 @@ public class mute : MonoBehaviour
     public bool muteBool = false;
     public AudioSource[] audios;
 
+    void Start()
+    {
+        SetAudio();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -14,8 +19,13 @@ public class mute : MonoBehaviour
 
             Debug.Log("muteBool:" + muteBool);
 
-            for (int i = 0; i < audios.Length; i++)
-                audios[i].mute = muteBool;
+            SetAudio();
         }
+    }
+
+    private void SetAudio()
+    {
+        for (int i = 0; i < audios.Length; i++)
+            audios[i].mute = muteBool;
     }
 }
