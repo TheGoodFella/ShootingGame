@@ -17,7 +17,7 @@ public class blink3DText : MonoBehaviour {
     void Update()
     {
         float t = Mathf.PingPong(Time.time, duration) / duration;
-
+        
         //blink the color of the text:
         GetComponent<TextMesh>().color = Color.Lerp(color0, color1, t);
     }

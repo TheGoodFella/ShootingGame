@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
+/*
+ * TODO: SAVE THE SCORES TO AN XML FILE
+ * */
+
 namespace Ranking
 {
     public class Player
