@@ -1,26 +1,36 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
+using UnityEngine;
 
 public class player : MonoBehaviour
 {
-
-    Ranking.Players p;
+    Ranking.Players ps;
+    static public Ranking.Player p = new Ranking.Player("debugPlayer", 0, DateTime.Now, 0);
 
     // Use this for initialization
     void Start()
     {
-        p = new Ranking.Players();
-        p.XmlParser(@"D:\player.xml");
+        Debug.Log("parsing...");
+        
+        //I create the list of the player obj:
+        ps = new Ranking.Players();
+        //I assign at the players list (plrs) the properties contained in the xml file
+        ps.plrs=ps.XmlParser(@"D:\pl.xml");
+        Debug.Log("parsed...");
+        Debug.Log("players name:");
 
-        for (int i = 0; i < p.plrs.Count; i++)
-        {
-            Debug.Log(p.plrs[i].Name);
-        }
+        //I print the player name
+        for (int i = 0; i < ps.plrs.Count; i++)
+            Debug.Log(ps.plrs[i].Name);
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    static public void AddScore(int scoreToAdd)
+    {
+        p.Score += scoreToAdd;
     }
 }

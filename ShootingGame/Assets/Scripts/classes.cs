@@ -2,6 +2,7 @@
 using System.IO;
 using System.Xml.Serialization;
 using System.Collections.Generic;
+using UnityEngine;
 
 /*
  * TODO: SAVE THE SCORES TO AN XML FILE

@@ -42,7 +42,7 @@ public class timeUpdater : MonoBehaviour
             {
                 gameTime += interval;
                 timeTXT.GetComponent<TextMesh>().text =string.Format(gameTime.ToString().Split('.')[0] + " " + time);
-                scoreTXT.GetComponent<TextMesh>().text = gm.player.Score + " pt";
+                scoreTXT.GetComponent<TextMesh>().text = player.p.Score + " pt";
             }
             //always update next, otherwise when the game is paused the method not works
             next += interval;
