@@ -70,7 +70,6 @@ namespace Ranking
             XmlSerializer xs = new XmlSerializer(typeof(List<Player>));
             xs.Serialize(sw, plrs);
             sw.Close();
-
         }
 
         public List<Player> XmlParser(string path)
