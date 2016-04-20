@@ -11,7 +11,7 @@ public class colliderScore : MonoBehaviour {
     {
         if (col.gameObject.tag == "bullet")
         {
-            player.AddScore(5);
+            player.TouchTarget();
             //Debug.Log("playerName:" + gm.player.Name + "\nscore:" + gm.player.Score);
             
         }
