@@ -4,7 +4,7 @@ using Ranking;
 
 public class gm : MonoBehaviour {
 
-    
+    public Player p;
 
     /// <summary>
     /// textbox for the name of the player, show at start, hide after insert
@@ -32,6 +32,6 @@ public class gm : MonoBehaviour {
     private int currentTargetCount = 0;
 
 	void Start () {
-	    
+        p = new Player();
 	}
 }
