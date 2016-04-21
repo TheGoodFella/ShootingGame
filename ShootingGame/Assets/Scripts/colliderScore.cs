@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class colliderScore : MonoBehaviour {
-
+    
     /// <summary>
     /// add score when the target it's struck by the bullet
     /// </summary>
@@ -11,9 +12,9 @@ public class colliderScore : MonoBehaviour {
     {
         if (col.gameObject.tag == "bullet")
         {
-            player.TouchTarget();
+
             //Debug.Log("playerName:" + gm.player.Name + "\nscore:" + gm.player.Score);
-            
+
         }
         //col.gameObject.GetComponent<Rigidbody>().AddExplosionForce(1000.0f, col.gameObject.GetComponent<Rigidbody>().position, 5.0f);
     }

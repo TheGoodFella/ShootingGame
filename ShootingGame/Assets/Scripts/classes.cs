@@ -41,6 +41,11 @@ namespace Ranking
             TimeSpent = timeSpent;
         }
 
+        public void AddScore(int scoreToAdd)
+        {
+            this.Score += scoreToAdd;
+        }
+
         public bool SaveXml(string path)
         {
 
