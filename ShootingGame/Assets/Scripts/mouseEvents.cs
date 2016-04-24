@@ -2,7 +2,7 @@
 using System.Threading;
 
 public class mouseEvents : MonoBehaviour {
-
+    
     public ParticleSystem fireParticles;
     
     //audios

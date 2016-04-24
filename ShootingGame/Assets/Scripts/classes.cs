@@ -20,7 +20,12 @@ namespace Ranking
         /// <summary>
         /// the final score
         /// </summary>
-        public int Score { get; set; }
+        public int score;
+        public int Score
+        {
+            get { return score; }
+            set { score = value; TargetRemained--; }
+        }
         /// <summary>
         /// when was the score achieved?
         /// </summary>
@@ -29,21 +34,27 @@ namespace Ranking
         /// time spent in the run
         /// </summary>
         public int TimeSpent { get; set; }
+
+        /// <summary>
+        /// how many target is remained?
+        /// </summary>
+        public int TargetRemained { get; set; }
         #endregion
 
         public Player() { }
 
-        public Player(string name, int score, DateTime date, int timeSpent)
+        public Player(string name, int score, DateTime date, int timeSpent, int targetRemained)
         {
             Name = name;
             Score = score;
             Date = date;
             TimeSpent = timeSpent;
+            TargetRemained = targetRemained;
         }
 
         public void AddScore(int scoreToAdd)
         {
-            this.Score += scoreToAdd;
+            Score += scoreToAdd;
         }
 
         public bool SaveXml(string path)
@@ -63,9 +74,9 @@ namespace Ranking
     {
         public List<Player> plrs = new List<Player>();
 
-        public bool AddPlayer(string name, int score, DateTime date, int timeSpent)
+        public bool AddPlayer(string name, int score, DateTime date, int timeSpent, int targetRemained)
         {
-            plrs.Add(new Player(name, score, date, timeSpent));
+            plrs.Add(new Player(name, score, date, timeSpent, targetRemained));
             return true;
         }
 

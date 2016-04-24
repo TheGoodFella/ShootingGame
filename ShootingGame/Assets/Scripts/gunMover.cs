@@ -108,9 +108,9 @@ public class gunMover : MonoBehaviour {
                 if (rb.velocity.z > maxSpeed) rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, maxSpeed);
                 if (rb.velocity.z < -maxSpeed) rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -maxSpeed);
 
-                Debug.Log("for: " + moveForward);
-                Debug.Log("back: " + moveBackward);
-                Debug.Log("gun velocity: " + rb.velocity.ToString());
+                //Debug.Log("for: " + moveForward);
+                //Debug.Log("back: " + moveBackward);
+                //Debug.Log("gun velocity: " + rb.velocity.ToString());
             }
             else
             {

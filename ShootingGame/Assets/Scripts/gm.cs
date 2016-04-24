@@ -4,7 +4,7 @@ using Ranking;
 
 public class gm : MonoBehaviour {
 
-    public Player p;
+    static public Player p;
 
     /// <summary>
     /// textbox for the name of the player, show at start, hide after insert
@@ -29,9 +29,27 @@ public class gm : MonoBehaviour {
     /// <summary>
     /// current target remained
     /// </summary>
-    private int currentTargetCount = 0;
+    private int currentTargetCount;
 
-	void Start () {
-        p = new Player();
-	}
+    /// <summary>
+    /// have I log "game over" already?
+    /// </summary>
+    private bool gameOver = false;
+
+	void Start ()
+    {        
+        p = new Player("galas", 0, System.DateTime.Now, 50, targetCount);
+        Debug.Log("gm started");
+        Debug.Log("currentTargetCount" + p.TargetRemained);
+
+    }
+
+    void Update()
+    {
+        if(p.TargetRemained==0 && !gameOver)
+        {
+            gameOver = true;
+            Debug.Log("game over");
+        }
+    }
 }
