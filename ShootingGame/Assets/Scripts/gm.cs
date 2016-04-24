@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Ranking;
+using System.IO;
 
 public class gm : MonoBehaviour {
 
@@ -50,6 +51,28 @@ public class gm : MonoBehaviour {
         {
             gameOver = true;
             Debug.Log("game over");
+            GameOver();
+        }
+    }
+
+    void GameOver()
+    {
+        Players ps = new Players();
+        csgp = @"D:\pl.xml";
+        if(File.Exists(csgp))
+        {
+            //ps.plrs.Add(new Player("galas", 100, System.DateTime.Now, 30, 5));
+            //ps.plrs.Add(new Player("dan", 200, System.DateTime.Now, 40, 5));
+            //ps.SaveXml(@"D:\pl.xml");
+            //ps.plrs = ps.XmlParser(@"D:\pl.xml");
+            //ps.SaveXml(@"D:\pl2.xml");
+            ps.plrs = ps.XmlParser(csgp);
+            ps.plrs.Add(p);
+            ps.SaveXml(csgp+"2");
+        }
+        else
+        {
+            p.SaveXml(csgp);
         }
     }
 }
