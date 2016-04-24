@@ -68,11 +68,12 @@ public class gm : MonoBehaviour {
             //ps.SaveXml(@"D:\pl2.xml");
             ps.plrs = ps.XmlParser(csgp);
             ps.plrs.Add(p);
-            ps.SaveXml(csgp+"2");
+            ps.SaveXml(csgp);
         }
         else
         {
-            p.SaveXml(csgp);
+            ps.plrs.Add(p);
+            ps.SaveXml(csgp);
         }
     }
 }

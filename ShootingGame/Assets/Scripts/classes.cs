@@ -96,6 +96,8 @@ namespace Ranking
 
             p = (List<Player>)xml.Deserialize(sr);
 
+            sr.Close();
+
             return p;
 
         }
