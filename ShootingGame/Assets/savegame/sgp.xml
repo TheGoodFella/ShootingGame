@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Player xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <score>10</score>
-  <Name>galas</Name>
-  <Score>10</Score>
-  <Date>2016-04-24T16:19:07.9962717+02:00</Date>
-  <TimeSpent>50</TimeSpent>
-  <TargetRemained>0</TargetRemained>
-</Player>

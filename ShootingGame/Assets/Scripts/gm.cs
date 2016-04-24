@@ -13,9 +13,9 @@ public class gm : MonoBehaviour {
     public GameObject canvasInput;
 
     /// <summary>
-    /// name of the save game xml file (Save Game Path)
+    /// name of the save game xml file (Save Game Name)
     /// </summary>
-    public string sgp;
+    public string sgn;
 
     /// <summary>
     /// complete path of the save game xml file (Complete Save Game Path)
@@ -58,8 +58,8 @@ public class gm : MonoBehaviour {
     void GameOver()
     {
         Players ps = new Players();
-        csgp = @"D:\pl.xml";
-        if(File.Exists(csgp))
+        csgp = Application.dataPath + @"/savegame/" + sgn;
+        if (File.Exists(csgp))
         {
             //ps.plrs.Add(new Player("galas", 100, System.DateTime.Now, 30, 5));
             //ps.plrs.Add(new Player("dan", 200, System.DateTime.Now, 40, 5));

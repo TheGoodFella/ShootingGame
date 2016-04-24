@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPlayer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Player>
+    <score>10</score>
+    <Name>galas</Name>
+    <Score>10</Score>
+    <Date>2016-04-24T16:27:45.9096663+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
+  <Player>
+    <score>10</score>
+    <Name>galas</Name>
+    <Score>10</Score>
+    <Date>2016-04-24T16:28:00.7638704+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
+</ArrayOfPlayer>
