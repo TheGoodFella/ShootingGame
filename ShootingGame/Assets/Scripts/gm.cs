@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using Ranking;
 using System.IO;
@@ -38,7 +39,10 @@ public class gm : MonoBehaviour {
     private bool gameOver = false;
 
 	void Start ()
-    {        
+    {
+        canvasInput.SetActive(true);
+        canvasInput.GetComponentInChildren<Text>().text = "fuck";
+
         p = new Player("galas", 0, System.DateTime.Now, 50, targetCount);
         Debug.Log("gm started");
         Debug.Log("currentTargetCount" + p.TargetRemained);
