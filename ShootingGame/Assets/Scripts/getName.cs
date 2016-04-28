@@ -10,7 +10,7 @@ public class getName : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -20,6 +20,7 @@ public class getName : MonoBehaviour {
 
     public void GetName()
     {
+        PauseGame.askName = false;
         gm.p.Name = playerText.text;
         canvasInput.SetActive(false);
         gm.StartGame();

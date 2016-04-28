@@ -14,6 +14,11 @@ public class PauseGame : MonoBehaviour {
     /// </summary>
     public static bool setPause = false;
 
+    /// <summary>
+    /// hide the pause text (resume,exit to windows, and mute text) when game starts because the ask-name-input-text is showing
+    /// </summary>
+    public static bool askName = true;
+
 
     /// <summary>
     /// is the game paused? [true:yes/false:no]
@@ -28,31 +33,33 @@ public class PauseGame : MonoBehaviour {
 	/// </summary>
     void Start()
     {
-        canvasPause.SetActive(gamePaused);
+        canvasPause.SetActive(false);
 
         //on start lock the cursor to the center of the game window and hide it
-        SetCursorState(true);
+        SetCursorState(false);
     }
 	
 	/// <summary>
     /// Update is called once per frame
 	/// </summary>
-	void Update () {
-        //if we press esc the cursor will unlock from the center of game window and it became visible if it wasn't, otherwise it again becomes locked and hidden
-        if (Input.GetKeyDown(KeyCode.Escape) || setPause)
-        {
-            if (isGamePaused)
+    void Update()
+    {
+        if (!askName)
+            //if we press esc the cursor will unlock from the center of game window and it became visible if it wasn't, otherwise it again becomes locked and hidden
+            if (Input.GetKeyDown(KeyCode.Escape) || setPause)
             {
-                SetCursorState(false);
+                if (isGamePaused)
+                {
+                    SetCursorState(false);
+                }
+                else
+                {
+                    SetCursorState(true);
+                }
+                setPause = false;
+                canvasPause.SetActive(gamePaused);
             }
-            else
-            {
-                SetCursorState(true);
-            }
-            setPause = false;
-            canvasPause.SetActive(gamePaused);
-        }
-	}
+    }
 
     /// <summary>
     /// set the state of the cursor: lock to the gamewindow and hide it if the doLock is true, otherwise unlock and show

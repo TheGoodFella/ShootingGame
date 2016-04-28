@@ -80,4 +80,20 @@
     <TimeSpent>50</TimeSpent>
     <TargetRemained>0</TargetRemained>
   </Player>
+  <Player>
+    <score>10</score>
+    <Name>player</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T14:08:56.2328528+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
+  <Player>
+    <score>10</score>
+    <Name>yeah</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T14:15:51.4593713+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
 </ArrayOfPlayer>
