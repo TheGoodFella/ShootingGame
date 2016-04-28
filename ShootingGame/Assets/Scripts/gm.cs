@@ -40,10 +40,11 @@ public class gm : MonoBehaviour {
 
 	void Start ()
     {
-        canvasInput.SetActive(true);
-        canvasInput.GetComponentInChildren<Text>().text = "fuck";
+        canvasInput.SetActive(false);
+        //canvasInput.SetActive(true);
+        //canvasInput.GetComponentInChildren<Text>().text = "fuck";
 
-        p = new Player("galas", 0, System.DateTime.Now, 50, targetCount);
+        p = new Player("temp", 0, System.DateTime.Now, 50, targetCount);
         Debug.Log("gm started");
         Debug.Log("currentTargetCount" + p.TargetRemained);
 

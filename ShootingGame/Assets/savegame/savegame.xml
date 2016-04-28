@@ -16,4 +16,28 @@
     <TimeSpent>50</TimeSpent>
     <TargetRemained>0</TargetRemained>
   </Player>
+  <Player>
+    <score>10</score>
+    <Name>galas</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T13:24:28.1814692+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
+  <Player>
+    <score>10</score>
+    <Name>galas</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T13:26:23.7880287+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
+  <Player>
+    <score>10</score>
+    <Name>temp</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T13:27:41.0827574+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
 </ArrayOfPlayer>
