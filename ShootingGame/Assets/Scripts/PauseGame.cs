@@ -9,15 +9,23 @@ public class PauseGame : MonoBehaviour {
     /// </summary>
     private bool isGamePaused;
 
+    /// <summary>
+    /// control the pause from external scripts, set to true for switch between pause and resume
+    /// </summary>
+    public static bool setPause = false;
+
 
     /// <summary>
     /// is the game paused? [true:yes/false:no]
     /// </summary>
     public static bool gamePaused;
 
+
     public GameObject canvasPause;
 
-	// Use this for initialization
+	/// <summary>
+    /// Use this for initialization
+	/// </summary>
     void Start()
     {
         canvasPause.SetActive(gamePaused);
@@ -26,10 +34,12 @@ public class PauseGame : MonoBehaviour {
         SetCursorState(true);
     }
 	
-	// Update is called once per frame
+	/// <summary>
+    /// Update is called once per frame
+	/// </summary>
 	void Update () {
         //if we press esc the cursor will unlock from the center of game window and it became visible if it wasn't, otherwise it again becomes locked and hidden
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || setPause)
         {
             if (isGamePaused)
             {
@@ -39,6 +49,7 @@ public class PauseGame : MonoBehaviour {
             {
                 SetCursorState(true);
             }
+            setPause = false;
             canvasPause.SetActive(gamePaused);
         }
 	}
