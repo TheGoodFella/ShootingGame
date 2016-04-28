@@ -88,10 +88,10 @@ public class gm : MonoBehaviour {
         p.Name = canvasInput.GetComponentInChildren<Text>().text;
     }
 
+
     public static void StartGame()
     {
-        Debug.Log(p.Name);
-        PauseGame.setPause = true;
-        
+        Debug.Log("player name: " + p.Name);
+        PauseGame.setPause = true; //change pause state to paused to resumed
     }
 }

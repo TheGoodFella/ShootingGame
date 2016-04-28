@@ -15,7 +15,7 @@ public class PauseGame : MonoBehaviour {
     public static bool setPause = false;
 
     /// <summary>
-    /// hide the pause text (resume,exit to windows, and mute text) when game starts because the ask-name-input-text is showing
+    /// do not allow to pause the game when the input textbox for the player name is showing (at the start of the game)
     /// </summary>
     public static bool askName = true;
 
@@ -33,10 +33,9 @@ public class PauseGame : MonoBehaviour {
 	/// </summary>
     void Start()
     {
+        //start paused because input textbox must be show to record the player name
         canvasPause.SetActive(false);
-
-        //on start lock the cursor to the center of the game window and hide it
-        SetCursorState(false);
+        SetCursorState(false); //
     }
 	
 	/// <summary>

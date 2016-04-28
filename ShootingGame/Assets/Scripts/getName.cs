@@ -18,11 +18,14 @@ public class getName : MonoBehaviour {
 	
 	}
 
+    /// <summary>
+    /// record the player name and start the game
+    /// </summary>
     public void GetName()
     {
-        PauseGame.askName = false;
-        gm.p.Name = playerText.text;
-        canvasInput.SetActive(false);
-        gm.StartGame();
+        PauseGame.askName = false;  //allows player to press ESC to pause/resume the game
+        gm.p.Name = playerText.text; //record player name
+        canvasInput.SetActive(false);  //hide the input textbox and the OK button
+        gm.StartGame();  //start the game
     }
 }

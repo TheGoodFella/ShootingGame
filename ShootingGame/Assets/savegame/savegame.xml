@@ -96,4 +96,12 @@
     <TimeSpent>50</TimeSpent>
     <TargetRemained>0</TargetRemained>
   </Player>
+  <Player>
+    <score>10</score>
+    <Name>my name</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T14:22:46.9769189+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
 </ArrayOfPlayer>
