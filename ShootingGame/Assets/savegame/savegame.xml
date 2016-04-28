@@ -48,4 +48,36 @@
     <TimeSpent>50</TimeSpent>
     <TargetRemained>0</TargetRemained>
   </Player>
+  <Player>
+    <score>10</score>
+    <Name>temp</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T13:49:43.6430424+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
+  <Player>
+    <score>10</score>
+    <Name>OK</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T13:54:08.8421226+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
+  <Player>
+    <score>10</score>
+    <Name>player name</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T13:58:57.7010056+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
+  <Player>
+    <score>10</score>
+    <Name>fff</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T13:59:16.8749228+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
 </ArrayOfPlayer>

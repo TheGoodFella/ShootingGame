@@ -4,6 +4,10 @@ using UnityEngine.UI;
 
 public class getName : MonoBehaviour {
 
+    public Text playerText;
+
+    public GameObject canvasInput;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -16,6 +20,8 @@ public class getName : MonoBehaviour {
 
     public void GetName()
     {
-        
+        gm.p.Name = playerText.text;
+        canvasInput.SetActive(false);
+        gm.StartGame();
     }
 }

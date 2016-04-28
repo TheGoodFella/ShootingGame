@@ -41,7 +41,7 @@ public class gm : MonoBehaviour {
 	void Start ()
     {
         PauseGame.setPause = true;
-        canvasInput.SetActive(false);
+        //canvasInput.SetActive(false);
         //canvasInput.SetActive(true);
         //canvasInput.GetComponentInChildren<Text>().text = "fuck";
 
@@ -86,5 +86,12 @@ public class gm : MonoBehaviour {
     public void SetName()
     {
         p.Name = canvasInput.GetComponentInChildren<Text>().text;
+    }
+
+    public static void StartGame()
+    {
+        Debug.Log(p.Name);
+        PauseGame.setPause = true;
+        
     }
 }
