@@ -104,4 +104,36 @@
     <TimeSpent>50</TimeSpent>
     <TargetRemained>0</TargetRemained>
   </Player>
+  <Player>
+    <score>10</score>
+    <Name>ff</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T14:35:26.6358772+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
+  <Player>
+    <score>10</score>
+    <Name>no collider score</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T14:36:01.7933926+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
+  <Player>
+    <score>10</score>
+    <Name>del colliderscore</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T14:38:46.8258942+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
+  <Player>
+    <score>10</score>
+    <Name>ped</Name>
+    <Score>10</Score>
+    <Date>2016-04-28T14:39:17.2859399+02:00</Date>
+    <TimeSpent>50</TimeSpent>
+    <TargetRemained>0</TargetRemained>
+  </Player>
 </ArrayOfPlayer>

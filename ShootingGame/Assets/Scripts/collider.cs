@@ -16,6 +16,9 @@ public class collider : MonoBehaviour {
     /// <param name="col"></param>
     void OnCollisionEnter(Collision col)
     {
+        if (col.gameObject.tag == "target")
+            gm.p.AddScore(5);
+
         Destroy(Instantiate(particleSmoke, GetComponent<Transform>().position, Quaternion.identity), destroyDelaySeconds);
         Destroy(gameObject);
         //col.gameObject.GetComponent<Rigidbody>().AddExplosionForce(1000.0f, col.gameObject.GetComponent<Rigidbody>().position, 5.0f);
