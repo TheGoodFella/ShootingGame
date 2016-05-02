@@ -21,4 +21,18 @@
     <TimeSpent>1.5</TimeSpent>
     <TargetRemained>-1</TargetRemained>
   </Player>
+  <Player>
+    <Name>pene</Name>
+    <Score>100</Score>
+    <Date>2016-05-02T15:15:06.4287071+02:00</Date>
+    <TimeSpent>2.99999976</TimeSpent>
+    <TargetRemained>-1</TargetRemained>
+  </Player>
+  <Player>
+    <Name>pene</Name>
+    <Score>100</Score>
+    <Date>2016-05-02T15:16:43.7897071+02:00</Date>
+    <TimeSpent>7.20000172</TimeSpent>
+    <TargetRemained>-1</TargetRemained>
+  </Player>
 </ArrayOfPlayer>
