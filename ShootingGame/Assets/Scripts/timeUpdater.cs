@@ -9,7 +9,7 @@ public class timeUpdater : MonoBehaviour
     /// <summary>
     /// the string after the time (mm:ss + thisString)
     /// </summary>
-    public string time = "s";
+    static public string time = "s";
     /// <summary>
     /// user for update interval
     /// </summary>

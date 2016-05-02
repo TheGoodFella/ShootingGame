@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
 using Ranking;
 using System.IO;
@@ -65,6 +66,9 @@ public class gm : MonoBehaviour {
     {
         Players ps = new Players();
         csgp = Application.dataPath + @"/savegame/" + sgn;
+        p.Score = 100;
+        p.Date = DateTime.Now;
+        p.TimeSpent = timeUpdater.gameTime;
         if (File.Exists(csgp))
         {
             //ps.plrs.Add(new Player("galas", 100, System.DateTime.Now, 30, 5));

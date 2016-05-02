@@ -20,7 +20,7 @@ namespace Ranking
         /// <summary>
         /// the final score
         /// </summary>
-        public int score;
+        private int score;
         public int Score
         {
             get { return score; }
@@ -33,7 +33,7 @@ namespace Ranking
         /// <summary>
         /// time spent in the run
         /// </summary>
-        public int TimeSpent { get; set; }
+        public float TimeSpent { get; set; }
 
         /// <summary>
         /// how many target is remained?
@@ -43,7 +43,7 @@ namespace Ranking
 
         public Player() { }
 
-        public Player(string name, int score, DateTime date, int timeSpent, int targetRemained)
+        public Player(string name, int score, DateTime date, float timeSpent, int targetRemained)
         {
             Name = name;
             Score = score;
@@ -74,7 +74,7 @@ namespace Ranking
     {
         public List<Player> plrs = new List<Player>();
 
-        public bool AddPlayer(string name, int score, DateTime date, int timeSpent, int targetRemained)
+        public bool AddPlayer(string name, int score, DateTime date, float timeSpent, int targetRemained)
         {
             plrs.Add(new Player(name, score, date, timeSpent, targetRemained));
             return true;
