@@ -14,4 +14,11 @@
     <TimeSpent>5.40000057</TimeSpent>
     <TargetRemained>-1</TargetRemained>
   </Player>
+  <Player>
+    <Name>fwef</Name>
+    <Score>100</Score>
+    <Date>2016-05-02T14:38:39.5917105+02:00</Date>
+    <TimeSpent>1.5</TimeSpent>
+    <TargetRemained>-1</TargetRemained>
+  </Player>
 </ArrayOfPlayer>
