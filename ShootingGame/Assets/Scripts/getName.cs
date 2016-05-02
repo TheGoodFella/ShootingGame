@@ -23,6 +23,7 @@ public class getName : MonoBehaviour {
     /// </summary>
     public void GetName()
     {
+        KawaseBlur.enable = false;
         PauseGame.askName = false;  //allows player to press ESC to pause/resume the game
         gm.p.Name = playerText.text; //record player name
         canvasInput.SetActive(false);  //hide the input textbox and the OK button

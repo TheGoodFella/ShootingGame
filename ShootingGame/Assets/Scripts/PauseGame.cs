@@ -66,6 +66,7 @@ public class PauseGame : MonoBehaviour {
     /// <param name="doLock">I have to lock and hide cursor?</param>
     void SetCursorState(bool doLock)
     {
+        KawaseBlur.enable = !doLock;
         if (doLock)  //lock and hide cursor
         {
             Cursor.lockState = CursorLockMode.Locked;
