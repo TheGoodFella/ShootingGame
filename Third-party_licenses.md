@@ -33,3 +33,6 @@ freely, subject to the following restrictions:
 
 Model:
 - [gun Magnum 460 by TheGoodFella](https://github.com/TheGoodFella/magnum460Blend)
+
+Unity3D-Blur:
+- [Unity3D-Blur effect](https://github.com/remibodin/Unity3D-Blur) by [Rémi Bodin](https://github.com/remibodin) : no license
