@@ -42,4 +42,25 @@
     <TimeSpent>12.6000051</TimeSpent>
     <TargetRemained>-1</TargetRemained>
   </Player>
+  <Player>
+    <Name />
+    <Score>100</Score>
+    <Date>2016-05-05T19:19:41.8379705+02:00</Date>
+    <TimeSpent>18.6</TimeSpent>
+    <TargetRemained>-1</TargetRemained>
+  </Player>
+  <Player>
+    <Name />
+    <Score>100</Score>
+    <Date>2016-05-05T19:20:35.5415144+02:00</Date>
+    <TimeSpent>4.5</TimeSpent>
+    <TargetRemained>-1</TargetRemained>
+  </Player>
+  <Player>
+    <Name />
+    <Score>100</Score>
+    <Date>2016-05-05T19:22:01.8412096+02:00</Date>
+    <TimeSpent>2.99999976</TimeSpent>
+    <TargetRemained>-1</TargetRemained>
+  </Player>
 </ArrayOfPlayer>
