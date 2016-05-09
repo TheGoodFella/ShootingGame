@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class credits : MonoBehaviour {
@@ -15,6 +16,6 @@ public class credits : MonoBehaviour {
 
     public void Click()
     {
-
+        SceneManager.LoadScene("credits");
     }
 }
