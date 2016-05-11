@@ -6,8 +6,6 @@ This project use third party sounds, fonts, and other resources, _for their lice
 
 My 3d model used in the game: [Magnum 460](https://github.com/TheGoodFella/magnum460Blend)<br/>
 
-[School essay link](http://tesine.marconirovereto.it/dettagli.html?2016.5BI.9)
-
 >enjoy
 
 ```
